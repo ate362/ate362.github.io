@@ -1,50 +1,46 @@
 <template>
-  <div class="layout">
-    <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
-      </nav>
-    </header>
-    <slot/>
-  </div>
+  <v-app id="inspire">
+    <v-app-bar app dark clipped-left>
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+
+      <v-toolbar-title>Application</v-toolbar-title>
+    </v-app-bar>
+    
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+      clipped
+    >
+      <!--  -->
+    </v-navigation-drawer>
+
+    <v-main>
+      <slot/>
+    </v-main>
+
+    <!-- <v-bottom-navigation shift>
+
+      <v-btn value="recent" to="/">
+        <span>Recent</span>
+  
+        <v-icon>mdi-history</v-icon>
+      </v-btn>
+
+      <v-btn value="favorites" to="/about/">
+        <span>Favorites</span>
+  
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+    </v-bottom-navigation> -->
+
+  </v-app>
 </template>
-
-<static-query>
-query {
-  metadata {
-    siteName
-  }
+<script>
+export default {
+  data () {
+    return {
+      drawer: true
+    }
+  },
 }
-</static-query>
-
-<style>
-body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  margin:0;
-  padding:0;
-  line-height: 1.5;
-}
-
-.layout {
-  max-width: 760px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
-}
-
-.nav__link {
-  margin-left: 20px;
-}
-</style>
+</script>
