@@ -6,5 +6,7 @@
 
 module.exports = {
   siteName: 'Gridsome',
-  plugins: []
+  plugins: [],
+  siteUrl: 'https://ate362.github.io',
+  pathPrefix: '/ate362.github.io'
 }
