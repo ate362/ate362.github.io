@@ -2,6 +2,7 @@
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
+import 'font-awesome/css/font-awesome.min.css'
 
 import DefaultLayout from '~/layouts/Default.vue'
 
@@ -19,7 +20,7 @@ export default function (Vue, { appOptions, router, head, isClient }) {
   
   const opts = { 
     icons: {
-      iconfont: 'mdiSvg', // 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4' || 'faSvg'
+      iconfont: 'mdiSvg' || 'fa4'// 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4' || 'faSvg'
     } 
   } //opts includes, vuetify themes, icons, etc.
   Vue.use(Vuetify)
