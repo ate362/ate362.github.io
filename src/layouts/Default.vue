@@ -3,7 +3,7 @@
     <v-app-bar app dark prominent clipped-left>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Application</v-toolbar-title>
+      <v-toolbar-title>Application Test</v-toolbar-title>
       <v-spacer></v-spacer>
   
       <v-btn icon>
